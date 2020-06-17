@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/img/flag.png">
+  <title>Capture the Flag</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link rel='stylesheet' type='text/css' href="/css/estilos.css">
+</head>
+
+<body class="body_index">
+  <div id="modal" class="modal fade hide" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content alerta">
+        <div class="modal-header">
+          <h5 class="modal-title" style="color: orangered; 
+          font-family: OCR A Std, monospace;">Vish</h5>
+          <button class="close" data-dismiss="modal" aria-label="Close"
+            style="color: orangered; font-family: OCR A Std, monospace;">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="color: orangered;">
+          <span>Humm, não está certo... Sabe mesmo qual é?</span>
+          <span>Tem novamente</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="ext container" style="padding-bottom: 30px;">
+    <div class="col-12" style="width: 90%; margin-left: 5%;">
+      <img src="/img/ctf.png">
+    </div>
+    <div id="resposta" th:text="${resposta}" hidden></div>
+    <div class="col-12 caixa_d">
+      <form class="formulario" action="/desafios/td4" method="POST">
+        <div class="form-group caixa_d_text">
+          <label>Olá, chegamos ao penúltimo Desafio. Ou será que não?</label>
+          <label>Enfim, comumente nos deparamos com erros em códigos Html, que fazem uma página não funcionar
+            corretamente. Consegue resolver o erro dessa?</label>
+          <label><a href="/desafios/galeria" target="_blank"><button type="button"
+                class="btn btn-sm">SITE</button></a></label>
+        </div>
+        <div class="form-group">
+          <input name="request" class="form-control" type="text" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <button class="btn botao" type="submit">Submeter</button>
+        </div>
+      </form>
+
+
+    </div>
+    <div class="col-12">
+      <a href="/inicio"><button class="btn botao">Voltar</button>
+      </a>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function () {
+      var a = document.getElementById('resposta').textContent;
+      if (a == "errou") {
+        $("#modal").modal({ show: true });
+      }
+    });
+  </script>
+</body>
+
+
+
+</html>

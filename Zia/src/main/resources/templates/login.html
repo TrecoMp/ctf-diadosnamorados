@@ -1,0 +1,43 @@
+<!doctype html>
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="icon" type="image/png" href="/img/flag.png">
+    <title>ServidorZão</title>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var a = document.getElementById('error').textContent;
+            if (a == "vish") {
+                alert('Não Não Não, você não pode acessar');
+            }
+        });
+    </script>
+    <title>Access</title>
+</head>
+
+<body class="text-center body_index">
+    <div>
+        <div id="error" th:text="${param.error}" hidden></div>
+        <form class="form-signin" id="caixa_in_login" action="/pessoa/logar" method="POST">
+            <img class="mb-4" src="/img/ac.png">
+            <div>
+                <input type="text" class="form-control" style="background-color: rgb(0, 0, 0);" placeholder="Login"
+                    name="username" required autofocus autocomplete="off">
+                <br>
+                <input type="password" class="form-control" style="background-color: rgb(0, 0, 0);" placeholder="Senha"
+                    name="password" required>
+                <br>
+                <button class="btn btn-lg btn-outline-light btn-block" type="submit">GO</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

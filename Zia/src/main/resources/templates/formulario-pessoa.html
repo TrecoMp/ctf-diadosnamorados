@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Adicionar Usuário</title>
+  <link rel="icon" type="image/png" href="/img/ico-title.png" />
+  <link rel='stylesheet' type='text/css' href="/css/bootstrap.min.css">
+  <link rel='stylesheet' type='text/css' href="/css/estilos.css">
+  <script src="/js/loading.js"></script>
+</head>
+
+
+<header class="cabecalho" style="border-bottom: 10px solid rgb(31, 10, 87);">
+  <img src="/img/logo-horizontal.png">
+</header>
+
+<body class="body_painel">
+  <div class="loader">
+    <img src="/img/load.gif" />
+  </div>
+  <div style="width: 60%; margin-left: 20%	;">
+    <br>
+    <div style="display: inline-flex;">
+      <img src="/img/add-user.png" style="max-width: 20px; max-height: 20px; align-self: center; margin-right: 7px;">
+      <h2>Adicionar Usuário</h2>
+    </div>
+    <br>
+    <div class="container" onclick="sumirAlerta()">
+      <form method=POST action="/pessoa/adicionar" th:object=${pessoa}>
+        <div class="alerta" th:if="${resposta} eq 1">Esse Login já existe, use outro por favor</div>
+
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Login </span>
+          </div>
+          <input class="form-control" type="text" name="login" th:field="*{login}" required>
+        </div>
+        <br>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Senha</span>
+          </div>
+          <input class="form-control" type="text" name="senha" th:field="*{senha}" required>
+        </div>
+        <br>
+        <div class="form-group">
+          <button class="form-control btn btn-primary" onclick="aparece()" type="submit"> Cadastrar Usuário</button>
+        </div>
+      </form>
+
+    </div>
+    <div style="display: inline-flex;">
+      <a href="/inicio">
+        <button class="btn btn-light"> Voltar </button>
+      </a>
+    </div>
+  </div>
+</body>
+
+</html>

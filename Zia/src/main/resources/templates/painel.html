@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/img/flag.png">
+  <title>Capture the Flag</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <script src="/js/bootstrap.min.js"></script>
+  <link rel='stylesheet' type='text/css' href="/css/estilos.css">
+</head>
+<div th:if="${final == 'final'}">
+  <p style="color:wheat;" th:text=${l}></p>
+  <p style="color:wheat;" th:text=${s}></p>
+</div>
+
+<body class="body_index">
+
+  <br>
+  <div class="ext container" style="padding-bottom: 30px;">
+    <div class="col-12" style="width: 90%; margin-left: 5%;">
+      <img src="/img/ctf.png">
+    </div>
+    <div class="col-12 caixa_desafio">
+
+      <img th:if="${desafios.d1 == 0}" src="/img/d-nok.png"
+        style="max-width: 40px; max-height: 40px; align-self: center; margin-right: 7px;">
+      <img th:if="${desafios.d1 == 1}" src="/img/d-ok.png"
+        style="max-width: 40px; max-height: 40px; align-self: center; margin-right: 7px;">
+      <a href="/desafios/d1">
+        <button class="btn botao">DESAFIO 1</button>
+      </a>
+    </div>
+    <div class="col-12 caixa_desafio">
+
+      <img th:if="${desafios.d2 == 0}" src="/img/d-nok.png"
+        style="max-width: 40px; max-height: 40px; align-self: center; margin-right: 7px;">
+      <img th:if="${desafios.d2 == 1}" src="/img/d-ok.png"
+        style="max-width: 40px; max-height: 40px; align-self: center; margin-right: 7px;">
+      <a href="/desafios/d2">
+        <button class="btn botao">DESAFIO 2</button>
+      </a>
+    </div>
+
+    <div class="col-12 caixa_desafio">
+
+      <img th:if="${desafios.d3 == 0}" src="/img/d-nok.png"
+        style="max-width: 40px; max-height: 40px; align-self: center; margin-right: 7px;">
+      <img th:if="${desafios.d3 == 1}" src="/img/d-ok.png"
+        style="max-width: 40px; max-height: 40px; align-self: center; margin-right: 7px;">
+      <a href="/desafios/d3">
+        <button class="btn botao">DESAFIO 3</button>
+      </a>
+    </div>
+
+    <div class="col-12 caixa_desafio">
+
+      <img th:if="${desafios.d4 == 0}" src="/img/d-nok.png"
+        style="max-width: 40px; max-height: 40px; align-self: center; margin-right: 7px;">
+      <img th:if="${desafios.d4 == 1}" src="/img/d-ok.png"
+        style="max-width: 40px; max-height: 40px; align-self: center; margin-right: 7px;">
+
+      <a href="/desafios/d4">
+        <button class="btn botao">DESAFIO 4</button>
+      </a>
+    </div>
+    <div class="col-12 caixa_desafio">
+      <img th:if="${desafios.d5 == 0}" src="/img/d-nok.png"
+        style="max-width: 40px; max-height: 40px; align-self: center; margin-right: 7px;">
+      <img th:if="${desafios.d5 == 1}" src="/img/d-ok.png"
+        style="max-width: 40px; max-height: 40px; align-self: center; margin-right: 7px;">
+      <a href="/desafios/d5">
+        <button class="btn botao">DESAFIO 5</button>
+      </a>
+    </div>
+    <div class="col-12 caixa_desafio">
+
+    </div>
+    <a href="/pessoa/logar">
+      <button class="btn botao">Acesse quando souber LOGIN e SENHA</button>
+    </a>
+  </div>
+
+</body>
+
+
+
+</html>
